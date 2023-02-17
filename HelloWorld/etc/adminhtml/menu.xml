@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Devhooks_HelloWorld::helloworld" title="FME" module="Devhooks_HelloWorld" sortOrder="10"
+             resource="Devhooks_HelloWorld::helloworld"/>
+        <add id="Devhooks_HelloWorld::grid" title="Manage Grid" module="Devhooks_HelloWorld" sortOrder="10"
+             action="helloworld/index/index" resource="Devhooks_HelloWorld::grid" parent="Devhooks_HelloWorld::helloworld"/>
+    </menu>
+    <!--
+    id: is used as the unique identifier of a menu.
+    title: the menu title that will be displayed in the admin menu.
+    module: the module that I have created (Demo_Mymenu).
+    sortOrder: is used to set the placement of menu.
+    resource: a rule to identify which admin user can see this menu.
+    action: is used to link an admin controller
+    parent: is used to define which menu level it depends on.
+    -->
+</config>
