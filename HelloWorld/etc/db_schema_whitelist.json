@@ -2,10 +2,10 @@
     "devhooks_helloworld": {
         "column": {
             "id": true,
-            "custom_field_1": true,
-            "custom_field_2": true,
             "status": true,
-            "image_field": true
+            "image_field": true,
+            "title": true,
+            "description": true
         },
         "constraint": {
             "PRIMARY": true
