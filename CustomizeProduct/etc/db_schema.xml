@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="fme_customizeproduct">
+        <column xsi:type="int" name="id" padding="10" identity="true" nullable="false" comment="ID" />
+        <column xsi:type="varchar" name="p_text" length="100" nullable="false" comment="Text to write on Product" />
+        <column xsi:type="text" name="p_d_guide" nullable="false" comment="Product Customization Design Guide" />
+        <column xsi:type="text" name="image_field" nullable="false" comment="Customization image"/>
+        <column xsi:type="int" name="has_image" padding="10" nullable="true" comment="Has Image" />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id" />
+        </constraint>
+    </table>
+
+    <!-- -->
+    <table name="fme_blog" resource="default" engine="innodb" comment="Blogs Table">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="Blog Id"/>
+        <column xsi:type="int" name="user_id" padding="10" unsigned="true" nullable="false" comment="Customer/User Id"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Blog Title"/>
+        <column xsi:type="longtext" name="content" nullable="false" comment="Blog Content"/>
+        <column xsi:type="smallint" name="status" padding="11" unsigned="false" nullable="false" default="0" comment="Blog Status"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Creation Time"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <index referenceId="FME_BLOG_USER_ID" indexType="btree">
+            <column name="user_id"/>
+        </index>
+    </table>
+    <table name="fme_comment" resource="default" engine="innodb" comment="Blog Comments Table">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="Comment Id"/>
+        <column xsi:type="int" name="blog_id" padding="10" unsigned="true" nullable="false" comment="Blog Id"/>
+        <column xsi:type="int" name="user_id" padding="10" unsigned="true" nullable="false" comment="User Id"/>
+        <column xsi:type="varchar" name="screen_name" nullable="false" length="255" comment="Screen Name"/>
+        <column xsi:type="text" name="comment" nullable="false" comment="Comment"/>
+        <column xsi:type="smallint" name="status" padding="11" unsigned="false" nullable="false" default="0" comment="Status"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Creation Time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="FK_BLOG_COMMENT" table="fme_comment" column="blog_id" referenceTable="fme_blog" referenceColumn="id" onDelete="CASCADE"/>
+        <index referenceId="FME_COMMENT_BLOG_ID" indexType="btree">
+            <column name="blog_id"/>
+        </index>
+    </table>
+</schema>

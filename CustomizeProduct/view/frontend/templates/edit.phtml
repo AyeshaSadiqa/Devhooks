@@ -1,0 +1,11 @@
+<?php
+$blog = $block->getBlog();
+?>
+<div class="blog-container">
+    <form class="blog-form" method="post" action=<?php echo $block->getUrl('customizeproduct/manage/save'); ?> data-mage-init='{"validation": {}}'>
+        <input type="hidden" name="id" value="<?= $blog->getId()?>"/>
+        Title: <input type="text" name="title" class="required-entry" value="<?= $blog->getTitle(); ?>"/>
+        Content: <textarea name="content" class="required-entry validate-no-html-tags" rows="10"><?= $blog->getContent(); ?></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</div>

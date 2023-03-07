@@ -1,0 +1,29 @@
+[33mcommit 1e204059e642f1e9170b4e8f6bfddaad9d64bae3[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: usol <ayeshasadiqa06@gmail.com>
+Date:   Wed Feb 22 18:09:40 2023 +0500
+
+    Data patch is removed
+
+[33mcommit db6567b495b427ffecb05e2aeadc1cc245f2271d[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: usol <ayeshasadiqa06@gmail.com>
+Date:   Wed Feb 22 10:18:28 2023 +0500
+
+    Grid has three  MassAction 1.Enable 2.Disable 3.Delete . Grid has two actions 1.edit 2.delete .Table has id,title,description,status,image field
+
+[33mcommit cf316c6760bf82a33355c3b1508bde4d2e931b45[m
+Author: usol <ayeshasadiqa06@gmail.com>
+Date:   Mon Feb 20 15:31:52 2023 +0500
+
+    Last commit wasn't full.In this commit all five fileds 1-massaction and 2 actions  ,are working.Service contracts not implemented.
+
+[33mcommit 9026d5857a4ca41df92ba0a8d198ec3d6b6ff654[m
+Author: usol <ayeshasadiqa06@gmail.com>
+Date:   Mon Feb 20 15:23:21 2023 +0500
+
+    Now there are five fields new filed is thumbnail.Everything is working fine.Service contracts are not implemented.
+
+[33mcommit 442eecc1fe52f4bd671d2283bfeb21faa989b977[m
+Author: usol <ayeshasadiqa06@gmail.com>
+Date:   Fri Feb 17 15:15:37 2023 +0500
+
+    Both Grid&Form are working.There are 4 fields 1-id-field-int 2-varchar-fileds 1-int-status-field.Two Actions are being performed 1-Edit 2-Delete. There is only 1-MassAction-Delete.Everything is working.

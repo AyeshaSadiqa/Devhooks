@@ -1,0 +1,23 @@
+<!--<div class="blog-container">
+    <form class="blog-form">
+        Title: <input type="text" name="title"/>
+        Content: <textarea name="content"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</div> -->
+<!--
+<div class="blog-container">
+    <form class="blog-form" data-mage-init='{"validation": {}}'>
+        Title: <input type="text" name="title" class="required-entry"/>
+        Content: <textarea name="content" class="required-entry validate-no-html-tags"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+-->
+<div class="blog-container">
+    <form class="blog-form" method="post" action=<?php echo $block->getUrl('customizeproduct/manage/save'); ?> data-mage-init='{"validation": {}}'>
+        Title: <input type="text" name="title" class="required-entry"/>
+        Content: <textarea name="content" class="required-entry validate-no-html-tags"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</div>

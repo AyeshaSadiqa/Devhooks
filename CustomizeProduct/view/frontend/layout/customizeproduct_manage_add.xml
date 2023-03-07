@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <!-- The block tag has a name attribute, we can use any sensible name here to identify that block -->
+            <block class="Magento\Framework\View\Element\Template" name="customizeproduct.blog.add" template="FME_CustomizeProduct::add.phtml" />
+        </referenceContainer>
+    </body>
+</page>

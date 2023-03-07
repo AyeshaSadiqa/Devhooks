@@ -1,0 +1,18 @@
+<?php
+ /** @var FME\CustomizeProduct\Block\Item $block */ 
+ ?>
+<?php $itemCollection = $block->getCollection(); ?>
+<?php if (count($itemCollection)) { ?>
+      <h2><?= $block->escapeHtml(__('fme customizeproduct')) ?></h2>
+      <?php foreach($itemCollection as $item): ?>
+           <h3><?= $block->escapeHtml(__('Item - ')) ?>
+               <a href="<?php echo $block->getItemUrl($item->getId());?>"><?php echo $item->getTitle(); ?></a> 
+           </h3> 
+           <p><?php echo $item->getContent(); ?></p> 
+     <?php endforeach; ?> 
+<?php } ?> 
+
+<?php
+	//echo 'This is a simple custom module and it does not include admin and database realted files.';
+?>
+

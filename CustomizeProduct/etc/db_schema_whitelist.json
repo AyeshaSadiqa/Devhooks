@@ -1,0 +1,49 @@
+{
+    "fme_customizeproduct": {
+        "column": {
+            "id": true,
+            "p_text": true,
+            "p_d_guide": true,
+            "image_field": true,
+            "has_image": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "fme_blog": {
+        "column": {
+            "id": true,
+            "user_id": true,
+            "title": true,
+            "content": true,
+            "status": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "index": {
+            "FME_BLOG_USER_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "fme_comment": {
+        "column": {
+            "id": true,
+            "blog_id": true,
+            "user_id": true,
+            "screen_name": true,
+            "comment": true,
+            "status": true,
+            "created_at": true
+        },
+        "index": {
+            "FME_COMMENT_BLOG_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FME_COMMENT_BLOG_ID_FME_BLOG_ID": true
+        }
+    }
+}

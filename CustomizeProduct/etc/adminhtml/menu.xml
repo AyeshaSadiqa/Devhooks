@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="FME_CustomizeProduct::customizeproduct" title="FME" module="FME_CustomizeProduct" sortOrder="10"
+             resource="FME_CustomizeProduct::customizeproduct"/>
+        <add id="FME_CustomizeProduct::grid" title="Customize Product" module="FME_CustomizeProduct" sortOrder="10"
+             action="customizeproduct/index/index" resource="FME_CustomizeProduct::grid" parent="FME_CustomizeProduct::customizeproduct"/>
+    </menu>
+    <!--
+    id: is used as the unique identifier of a menu.
+    title: the menu title that will be displayed in the admin menu.
+    module: the module that I have created (Demo_Mymenu).
+    sortOrder: is used to set the placement of menu.
+    resource: a rule to identify which admin user can see this menu.
+    action: is used to link an admin controller
+    parent: is used to define which menu level it depends on.
+    -->
+</config>
