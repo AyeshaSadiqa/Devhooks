@@ -16,7 +16,7 @@ class Add extends AbstractAccount
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->set(__('Add Blog'));
+        $resultPage->getConfig()->getTitle()->set(__('Add Test Entity'));
         $layout = $resultPage->getLayout();
         return $resultPage;
     }

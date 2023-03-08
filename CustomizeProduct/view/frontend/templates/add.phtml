@@ -14,10 +14,44 @@
     </form>
 </div>
 -->
-<div class="blog-container">
-    <form class="blog-form" method="post" action=<?php echo $block->getUrl('customizeproduct/manage/save'); ?> data-mage-init='{"validation": {}}'>
-        Title: <input type="text" name="title" class="required-entry"/>
-        Content: <textarea name="content" class="required-entry validate-no-html-tags"></textarea>
-        <button type="submit">Submit</button>
+
+<div class="test-container">
+    <form class="test-form" method="post" action=<?php echo $block->getUrl('customizeproduct/manage/save'); ?> data-mage-init='{"validation": {}}' enctype='multipart/form-data'>
+        <fieldset class="fieldset">
+            <div class="field p_text">
+                <label class="label" for="p_text">
+                    <span><?= $block->escapeHtml(__('Text To Write On Product')) ?></span>
+                </label>
+                <div class="control">
+                    <input name="p_text" id="p_text" class="required-entry" type="text" />
+                </div>
+            </div>
+            <div class="field p_d_guide">
+                <label class="label" for="p_d_guide">
+                    <span><?= $block->escapeHtml(__(' Product Customization Design Guide')) ?></span>
+                </label>
+                <div class="control">
+                    <textarea name="p_d_guide" class="required-entry validate-no-html-tags"></textarea>
+                </div>
+            </div>
+            <div class="field image_field">
+                <label class="label" for="image_field">
+                    <span><?= $block->escapeHtml(__('File Attachment')) ?></span>
+                </label>
+                <div class="control">
+                    <input name="image_field" id="image_field" title="<?= $block->escapeHtmlAttr(__('Attachment')) ?>"  class="input-file" type="file" />
+                </div>
+            </div> 
+
+
+        </fieldset>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <input type="hidden" name="hideit" id="hideit" value="" />
+                <button type="submit" title="<?= $block->escapeHtmlAttr(__('Submit')) ?>" class="action submit primary">
+                    <span><?= $block->escapeHtml(__('Submit')) ?></span>
+                </button>
+            </div>
+        </div>
     </form>
 </div>

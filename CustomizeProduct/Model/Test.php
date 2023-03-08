@@ -1,17 +1,17 @@
 <?php
 namespace FME\CustomizeProduct\Model;
 
-class Blog extends \Magento\Framework\Model\AbstractModel implements \Magento\Framework\DataObject\IdentityInterface
+class Test extends \Magento\Framework\Model\AbstractModel implements \Magento\Framework\DataObject\IdentityInterface
 {
     const NOROUTE_ENTITY_ID = 'no-route';
     const ID = 'id';
-    const CACHE_TAG = 'fme_customizeproduct_blog';
-    protected $_cacheTag = 'fme_customizeproduct_blog';
-    protected $_eventPrefix = 'fme_customizeproduct_blog';
+    const CACHE_TAG = 'fme_customizeproduct_test';
+    protected $_cacheTag = 'fme_customizeproduct_test';
+    protected $_eventPrefix = 'fme_customizeproduct_test';
     
     public function _construct()
     {
-        $this->_init(\FME\CustomizeProduct\Model\ResourceModel\Blog::class);
+        $this->_init(\FME\CustomizeProduct\Model\ResourceModel\Test::class);
     }
     
     public function load($id, $field = null)

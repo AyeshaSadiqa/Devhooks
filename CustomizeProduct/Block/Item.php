@@ -46,7 +46,7 @@ class Item extends Template
      * @return string
      */
     public function getItemUrl($viewId) {
-         return $this->getUrl('blog/index/view/'.$viewId, ['_secure' => true]);
+         return $this->getUrl('test/index/view/'.$viewId, ['_secure' => true]);
     }
 }
 

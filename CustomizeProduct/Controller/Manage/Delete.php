@@ -7,17 +7,17 @@ use Magento\Customer\Model\Session;
 
 class Delete extends AbstractAccount
 {
-    public $blogFactory;
+    public $testFactory;
     public $customerSession;
     public $messageManager;
 
     public function __construct(
         Context $context,
-        \FME\CustomizeProduct\Model\BlogFactory $blogFactory,
+        \FME\CustomizeProduct\Model\TestFactory $testFactory,
         Session $customerSession,
         \Magento\Framework\Message\ManagerInterface $messageManager
     ) {
-        $this->blogFactory = $blogFactory;
+        $this->testFactory = $testFactory;
         $this->customerSession = $customerSession;
         $this->messageManager = $messageManager;
         parent::__construct($context);
@@ -25,20 +25,20 @@ class Delete extends AbstractAccount
 
     public function execute()
     {
-        $blogId = $this->getRequest()->getParam('id');
+        $testId = $this->getRequest()->getParam('id');
         $customerId = $this->customerSession->getCustomerId();
-        $isAuthorised = $this->blogFactory->create()
+        $isAuthorised = $this->testFactory->create()
                                     ->getCollection()
                                     ->addFieldToFilter('user_id', $customerId)
-                                    ->addFieldToFilter('id', $blogId)
+                                    ->addFieldToFilter('id', $testId)
                                     ->getSize();
         if (!$isAuthorised) {
-            $this->messageManager->addError(__('You are not authorised to delete this blog.'));
+            $this->messageManager->addError(__('You are not authorised to delete this test.'));
             return $this->resultRedirectFactory->create()->setPath('customizeproduct/manage');
         } else {
-            $model = $this->blogFactory->create()->load($blogId);
+            $model = $this->testFactory->create()->load($testId);
             $model->delete();
-            $this->messageManager->addSuccess(__('You have successfully deleted the blog.'));
+            $this->messageManager->addSuccess(__('You have successfully deleted the test.'));
         }     
         return $this->resultRedirectFactory->create()->setPath('customizeproduct/manage');
     }

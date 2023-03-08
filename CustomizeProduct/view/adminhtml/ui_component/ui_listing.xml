@@ -114,6 +114,17 @@
                 </item>
             </argument>
         </column>
+        <column name="user_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="resizeEnabled" xsi:type="boolean">false</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">55</item>
+                    <item name="filter" xsi:type="string">textRange</item>
+                    <item name="sorting" xsi:type="string">asc</item>
+                    <item name="label" xsi:type="string" translate="true">USER_ID</item>
+                </item>
+            </argument>
+        </column>
         <column name="image_field" class="FME\CustomizeProduct\Ui\Component\Listing\CustomizeProduct\Thumbnail">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">

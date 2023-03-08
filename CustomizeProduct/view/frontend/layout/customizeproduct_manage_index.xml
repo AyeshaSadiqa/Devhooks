@@ -3,7 +3,7 @@
     <update handle="customer_account"/>
     <body>
         <referenceContainer name="content">
-            <block class="FME\CustomizeProduct\Block\BlogList" name="customizeproduct.blog.list" template="FME_CustomizeProduct::list.phtml" />
+            <block class="FME\CustomizeProduct\Block\TestList" name="customizeproduct.test.list" template="FME_CustomizeProduct::list.phtml" />
         </referenceContainer>
     </body>
 </page>

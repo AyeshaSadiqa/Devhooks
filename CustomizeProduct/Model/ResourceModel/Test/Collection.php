@@ -1,5 +1,5 @@
 <?php
-namespace FME\CustomizeProduct\Model\ResourceModel\Blog;
+namespace FME\CustomizeProduct\Model\ResourceModel\Test;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
@@ -8,8 +8,8 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     public function _construct()
     {
         $this->_init(
-            \FME\CustomizeProduct\Model\Blog::class,
-            \FME\CustomizeProduct\Model\ResourceModel\Blog::class
+            \FME\CustomizeProduct\Model\Test::class,
+            \FME\CustomizeProduct\Model\ResourceModel\Test::class
         );
         $this->_map['fields']['id'] = 'main_table.id';
     }

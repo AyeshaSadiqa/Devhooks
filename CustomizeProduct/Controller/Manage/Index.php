@@ -18,7 +18,7 @@ class Index extends AbstractAccount
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->set(__('Blogs'));
+        $resultPage->getConfig()->getTitle()->set(__('Test Module'));
         $layout = $resultPage->getLayout();
         return $resultPage;
     }

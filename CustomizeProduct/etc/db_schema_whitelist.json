@@ -5,10 +5,16 @@
             "p_text": true,
             "p_d_guide": true,
             "image_field": true,
-            "has_image": true
+            "has_image": true,
+            "user_id": true,
+            "created_at": true,
+            "updated_at": true
         },
         "constraint": {
             "PRIMARY": true
+        },
+        "index": {
+            "FME_CUSTOMIZEPRODUCT_USER_ID": true
         }
     },
     "fme_blog": {

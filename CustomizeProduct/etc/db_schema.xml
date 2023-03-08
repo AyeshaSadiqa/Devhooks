@@ -2,13 +2,19 @@
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
     <table name="fme_customizeproduct">
         <column xsi:type="int" name="id" padding="10" identity="true" nullable="false" comment="ID" />
+        <column xsi:type="int" name="user_id" padding="10" unsigned="true" nullable="false" comment="Customer/User Id"/>
         <column xsi:type="varchar" name="p_text" length="100" nullable="false" comment="Text to write on Product" />
         <column xsi:type="text" name="p_d_guide" nullable="false" comment="Product Customization Design Guide" />
         <column xsi:type="text" name="image_field" nullable="false" comment="Customization image"/>
         <column xsi:type="int" name="has_image" padding="10" nullable="true" comment="Has Image" />
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Creation Time"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id" />
         </constraint>
+        <index referenceId="FME_CUSTOMIZEPRODUCT_USER_ID" indexType="btree">
+            <column name="user_id"/>
+        </index>
     </table>
 
     <!-- -->

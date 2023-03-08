@@ -9,19 +9,19 @@ use Magento\Customer\Model\Session;
 class Edit extends AbstractAccount
 {
     public $resultPageFactory;
-    public $blogFactory;
+    public $testFactory;
     public $customerSession;
     public $messageManager;
 
     public function __construct(
         Context $context,
     PageFactory $resultPageFactory,
-        \FME\CustomizeProduct\Model\BlogFactory $blogFactory,
+        \FME\CustomizeProduct\Model\testFactory $testFactory,
         Session $customerSession,
         \Magento\Framework\Message\ManagerInterface $messageManager
     ) {
     $this->resultPageFactory = $resultPageFactory;
-    $this->blogFactory = $blogFactory;
+    $this->testFactory = $testFactory;
     $this->customerSession = $customerSession;
     $this->messageManager = $messageManager;
         parent::__construct($context);
@@ -29,20 +29,20 @@ class Edit extends AbstractAccount
 
     public function execute()
     {
-        $blogId = $this->getRequest()->getParam('id');
+        $testId = $this->getRequest()->getParam('id');
         $customerId = $this->customerSession->getCustomerId();
-        $isAuthorised = $this->blogFactory->create()
+        $isAuthorised = $this->testFactory->create()
                                     ->getCollection()
                                     ->addFieldToFilter('user_id', $customerId)
-                                    ->addFieldToFilter('id', $blogId)
+                                    ->addFieldToFilter('id', $testId)
                                     ->getSize();
         if (!$isAuthorised) {
-            $this->messageManager->addError(__('You are not authorised to edit this blog.'));
+            $this->messageManager->addError(__('You are not authorised to edit this test.'));
             return $this->resultRedirectFactory->create()->setPath('customizeproduct/manage');
         }
 
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->set(__('Edit Blog'));
+        $resultPage->getConfig()->getTitle()->set(__('Edit Test'));
         $layout = $resultPage->getLayout();
         return $resultPage;
     }

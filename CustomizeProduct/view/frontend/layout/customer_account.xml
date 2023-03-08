@@ -2,15 +2,15 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="customer_account_navigation">
-            <block class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-navigation-blog-add" after="-" >
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-navigation-test-add" after="-" >
                 <arguments>
-                    <argument name="label" xsi:type="string" translate="true">Add Blog</argument>
+                    <argument name="label" xsi:type="string" translate="true">Add Test Entity</argument>
                     <argument name="path" xsi:type="string">customizeproduct/manage/add</argument>
                 </arguments>
             </block>
-            <block class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-navigation-blog-list" before="customer-account-navigation-blog-add" >
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-navigation-test-list" before="customer-account-navigation-test-add" >
                 <arguments>
-                    <argument name="label" xsi:type="string" translate="true">Blogs</argument>
+                    <argument name="label" xsi:type="string" translate="true">Tests</argument>
                     <argument name="path" xsi:type="string">customizeproduct/manage</argument>
                 </arguments>
             </block>
